@@ -1,4 +1,4 @@
 [SETTING]
-profilePath = ""  # Google Chrome User Path
-tergetURL = ""
-gmailURL = ""
+profilePath = /XXX/XXX/XXXX # Google Chrome User Path
+tergetURL = XXXXX.com
+gmailURL = XXXXX.com
