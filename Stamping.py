@@ -9,7 +9,7 @@ config_ini.read('config.ini', encoding='utf-8')
 
 # ログイン情報を保持してブラウザを開く
 options = Options()
-PROFILE_PATH = r['SETTING']['profilePath']
+PROFILE_PATH = config_ini['SETTING']['profilePath']
 options.add_argument('--user-data-dir=' + PROFILE_PATH)
 driver = webdriver.Chrome(options=options)
 
