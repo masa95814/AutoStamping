@@ -16,6 +16,6 @@ driver = webdriver.Chrome(options=options)
 driver.get(config_ini['SETTING']['tergetURL'])
 
 # 別タブでgmailを開く
-element = driver.find_element_by_link_text(config_ini['SETTING']['gmailURL'])
-handles_befor = driver.window_handles
-actions = ActionChains(driver)
+driver.execute_script("window.open()")
+driver.switch_to.window(driver.window_handles[1])
+driver.get(config_ini['SETTING']['gmailURL'])
