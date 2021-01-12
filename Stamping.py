@@ -19,3 +19,12 @@ driver.get(config_ini['SETTING']['tergetURL'])
 driver.execute_script("window.open()")
 driver.switch_to.window(driver.window_handles[1])
 driver.get(config_ini['SETTING']['gmailURL'])
+
+# ログイン
+email = driver.find_element_by_name("Email")
+email.send_keys("email")
+email.send_keys(Keys.RETURN)
+
+passwd = driver.find_element_by_name("Passwd");
+passwd.send_keys("password")
+passwd.send_keys(Keys.RETURN)
