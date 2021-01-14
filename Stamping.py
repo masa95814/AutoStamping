@@ -12,19 +12,23 @@ options = Options()
 PROFILE_PATH = config_ini['SETTING']['profilePath']
 options.add_argument('--user-data-dir=' + PROFILE_PATH)
 driver = webdriver.Chrome(options=options)
-
 driver.get(config_ini['SETTING']['tergetURL'])
-
+time.sleep(5)
 # 別タブでgmailを開く
 driver.execute_script("window.open()")
 driver.switch_to.window(driver.window_handles[1])
 driver.get(config_ini['SETTING']['gmailURL'])
 
 # ログイン
-email = driver.find_element_by_name("Email")
-email.send_keys("email")
-email.send_keys(Keys.RETURN)
+driver.find_element_by_xpath('/html/body/div[2]/div[1]/div[4]/ul[1]/li[2]/a').click()
+# time.sleep(1)
+# id = driver.find_element_by_name("identifierId")
+# id.send_keys('masaya.yamashita@sharing-innovations.co.jp')
+# driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
 
-passwd = driver.find_element_by_name("Passwd");
-passwd.send_keys("password")
-passwd.send_keys(Keys.RETURN)
+# email = driver.find_element_by_name("identifier")
+# email.send_keys("masaya.yamashita@sharing-innovations.co.jp")
+# email.send_keys(Keys.RETURN)
+# passwd = driver.find_element_by_name("Passwd")
+# passwd.send_keys("Rinrin14")
+# passwd.send_keys(Keys.RETURN)
